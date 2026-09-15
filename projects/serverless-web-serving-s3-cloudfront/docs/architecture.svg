@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="820" viewBox="0 0 1600 820" role="img" aria-labelledby="title desc">
+  <title id="title">Serverless Web Serving with S3 and CloudFront</title>
+  <desc id="desc">An internet user sends an HTTPS request to Amazon CloudFront. CloudFront retrieves files through Origin Access Control from a private Amazon S3 bucket.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#10192b"/>
+    </linearGradient>
+    <linearGradient id="cf" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#5b21b6"/>
+    </linearGradient>
+    <linearGradient id="s3" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ef4444"/>
+      <stop offset="1" stop-color="#991b1b"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff9900"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a78bfa"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="820" rx="28" fill="url(#bg)"/>
+  <circle cx="1310" cy="120" r="270" fill="#8b5cf6" opacity="0.08"/>
+  <circle cx="180" cy="720" r="260" fill="#38bdf8" opacity="0.06"/>
+
+  <text x="80" y="82" fill="#f8fafc" font-family="Arial, sans-serif" font-size="38" font-weight="700">Serverless Web Serving with S3 &amp; CloudFront</text>
+  <text x="80" y="120" fill="#94a3b8" font-family="Arial, sans-serif" font-size="20">Secure global delivery from a private Amazon S3 origin</text>
+
+  <rect x="395" y="160" width="1125" height="570" rx="24" fill="#ffffff" fill-opacity="0.025" stroke="#64748b" stroke-opacity="0.65" stroke-width="2"/>
+  <rect x="425" y="188" width="86" height="36" rx="6" fill="#ff9900"/>
+  <text x="468" y="213" text-anchor="middle" fill="#111827" font-family="Arial, sans-serif" font-size="16" font-weight="700">AWS</text>
+  <text x="530" y="213" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="18" font-weight="600">AWS Cloud</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="323" width="245" height="210" rx="22" fill="#111c2e" stroke="#38bdf8" stroke-opacity="0.6"/>
+    <circle cx="192" cy="394" r="38" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-width="3"/>
+    <circle cx="192" cy="394" r="24" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <path d="M154 394h76M192 356c-12 15-17 26-17 38s5 23 17 38M192 356c12 15 17 26 17 38s-5 23-17 38" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <text x="192" y="474" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="700">Internet User</text>
+    <text x="192" y="504" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="16">Requests the website</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="570" y="292" width="310" height="270" rx="24" fill="url(#cf)"/>
+    <circle cx="725" cy="382" r="57" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="725" cy="382" r="28" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="725" cy="338" r="8" fill="#ffffff"/>
+    <circle cx="768" cy="390" r="8" fill="#ffffff"/>
+    <circle cx="691" cy="414" r="8" fill="#ffffff"/>
+    <path d="M725 346l0 8M748 374l12 12M704 402l-8 8" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+    <text x="725" y="481" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="700">Amazon CloudFront</text>
+    <text x="725" y="517" text-anchor="middle" fill="#ede9fe" font-family="Arial, sans-serif" font-size="17">HTTPS • CDN • Global cache</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1100" y="292" width="310" height="270" rx="24" fill="#111c2e" stroke="#ef4444" stroke-opacity="0.75"/>
+    <path d="M1204 347h102l-10 92c-2 17-17 30-34 30h-14c-17 0-32-13-34-30z" fill="url(#s3)"/>
+    <ellipse cx="1255" cy="347" rx="51" ry="15" fill="#f87171"/>
+    <rect x="1239" y="372" width="32" height="25" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+    <text x="1255" y="506" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="28" font-weight="700">Private S3 Bucket</text>
+    <text x="1255" y="536" text-anchor="middle" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Block Public Access: ON</text>
+  </g>
+
+  <path d="M315 427 H545" fill="none" stroke="#ff9900" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="369" y="379" width="124" height="34" rx="17" fill="#172033"/>
+  <text x="431" y="402" text-anchor="middle" fill="#ffb547" font-family="Arial, sans-serif" font-size="15" font-weight="700">HTTPS request</text>
+
+  <path d="M880 427 H1075" fill="none" stroke="#a78bfa" stroke-width="5" marker-end="url(#arrowPurple)"/>
+  <rect x="906" y="366" width="146" height="48" rx="18" fill="#172033"/>
+  <text x="979" y="387" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="14" font-weight="700">Signed request</text>
+  <text x="979" y="405" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12">OAC + SigV4</text>
+
+  <rect x="570" y="614" width="840" height="70" rx="16" fill="#0f1b2d" stroke="#334155"/>
+  <circle cx="610" cy="649" r="14" fill="#22c55e" fill-opacity="0.18" stroke="#22c55e"/>
+  <path d="M603 649l5 5 10-12" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="640" y="642" fill="#f8fafc" font-family="Arial, sans-serif" font-size="17" font-weight="700">Security result</text>
+  <text x="640" y="666" fill="#94a3b8" font-family="Arial, sans-serif" font-size="15">Visitors can use CloudFront, but direct S3 object URLs return Access Denied.</text>
+
+  <text x="80" y="770" fill="#64748b" font-family="Arial, sans-serif" font-size="16">Architecture by Muhammad Luqman • AWS Cloud &amp; DevOps Project</text>
+</svg>
+
