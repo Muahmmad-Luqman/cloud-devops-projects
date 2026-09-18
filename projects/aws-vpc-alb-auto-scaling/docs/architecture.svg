@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+<defs>
+ <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#334155" stroke-width="1.5"/></marker>
+ <marker id="blue" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#2563eb" stroke-width="1.5"/></marker>
+ <style>text{font-family:DejaVu Sans,sans-serif;fill:#16243a}.title{font-size:36px;font-weight:700}.h{font-size:23px;font-weight:700}.body{font-size:18px}.small{font-size:16px}.muted{fill:#56667b}.traffic{fill:none;stroke:#334155;stroke-width:3;marker-end:url(#arrow)}.out{fill:none;stroke:#2563eb;stroke-width:3;stroke-dasharray:8 6;marker-end:url(#blue)}.control{fill:none;stroke:#8b5cf6;stroke-width:3;stroke-dasharray:4 6}.badge{font-size:15px;font-weight:700;fill:white}</style>
+</defs>
+<rect width="1600" height="1200" fill="#f5f7fb"/>
+<rect x="0" y="0" width="1600" height="10" fill="#ff9900"/>
+<text x="55" y="67" class="title">AWS VPC • Load Balancing • Auto Scaling</text>
+<text x="55" y="100" class="body muted">Reference architecture — public entry point, private web servers, automatic replacement and scaling</text>
+<rect x="55" y="142" width="220" height="75" rx="12" fill="white" stroke="#cbd5e1"/>
+<text x="165" y="173" text-anchor="middle" class="h">Internet Users</text><text x="165" y="199" text-anchor="middle" class="small muted">HTTP demo traffic</text>
+<rect x="355" y="142" width="240" height="75" rx="12" fill="#eef2ff" stroke="#a5b4fc"/>
+<text x="475" y="173" text-anchor="middle" class="h">Internet Gateway</text><text x="475" y="199" text-anchor="middle" class="small muted">Attached to the VPC</text>
+<path d="M275 179 H355" class="traffic"/>
+<rect x="650" y="138" width="395" height="88" rx="12" fill="#f3eefe" stroke="#a78bfa"/>
+<text x="847" y="169" text-anchor="middle" class="h">Launch Template</text><text x="847" y="196" text-anchor="middle" class="small">AMI • instance type • web setup • role</text><text x="847" y="217" text-anchor="middle" class="small muted">Configuration used for every new VM</text>
+<rect x="1100" y="138" width="445" height="88" rx="12" fill="#f3eefe" stroke="#a78bfa"/>
+<text x="1322" y="169" text-anchor="middle" class="h">CloudWatch → Scaling Policy</text><text x="1322" y="196" text-anchor="middle" class="small">Reference: average CPU target 60%</text><text x="1322" y="217" text-anchor="middle" class="small muted">Evaluates sustained load, not an instant trigger</text>
+<rect x="55" y="257" width="1490" height="758" rx="18" fill="white" stroke="#475569" stroke-width="2"/>
+<text x="80" y="292" class="h">AWS Region: us-east-1</text><text x="80" y="322" class="body muted">VPC: project-vpc • 10.0.0.0/16</text>
+<rect x="82" y="345" width="700" height="553" rx="12" fill="#fafbff" stroke="#b6c2d3" stroke-dasharray="8 5"/>
+<rect x="818" y="345" width="700" height="553" rx="12" fill="#fafbff" stroke="#b6c2d3" stroke-dasharray="8 5"/>
+<text x="105" y="376" class="h">Availability Zone A</text><text x="841" y="376" class="h">Availability Zone B</text>
+<rect x="105" y="397" width="654" height="217" rx="10" fill="#edf8f2" stroke="#86c5a3"/>
+<rect x="841" y="397" width="654" height="217" rx="10" fill="#edf8f2" stroke="#86c5a3"/>
+<text x="125" y="424" class="body">Public Subnet A • 10.0.1.0/24</text><text x="861" y="424" class="body">Public Subnet B • 10.0.2.0/24</text>
+<rect x="468" y="448" width="664" height="72" rx="10" fill="#793bc0"/>
+<text x="800" y="477" text-anchor="middle" class="h" style="fill:white">Application Load Balancer</text>
+<text x="800" y="502" text-anchor="middle" class="small" style="fill:#f0e6ff">Internet-facing • spans both public subnets • listener HTTP :80</text>
+<path d="M475 217 V331 H800 V448" class="traffic"/>
+<rect x="135" y="465" width="271" height="85" rx="10" fill="#e7efff" stroke="#6094e7"/>
+<text x="270" y="496" text-anchor="middle" class="h">Zonal NAT Gateway</text><text x="270" y="523" text-anchor="middle" class="small">One NAT + Elastic IP</text>
+<text x="135" y="581" class="small muted">Outbound access only</text>
+<rect x="105" y="648" width="654" height="223" rx="10" fill="#eff5ff" stroke="#89a9db"/>
+<rect x="841" y="648" width="654" height="223" rx="10" fill="#eff5ff" stroke="#89a9db"/>
+<text x="125" y="677" class="body">Private Subnet A • 10.0.11.0/24</text><text x="861" y="677" class="body">Private Subnet B • 10.0.12.0/24</text>
+<rect x="290" y="532" width="1020" height="330" rx="16" fill="none" stroke="#e88716" stroke-width="2.5" stroke-dasharray="10 6"/>
+<rect x="573" y="536" width="454" height="48" rx="9" fill="#fff4e5" stroke="#e88716"/>
+<text x="800" y="566" text-anchor="middle" class="h">Auto Scaling Group • Min 1 / Max 4</text>
+<rect x="620" y="601" width="360" height="71" rx="10" fill="white" stroke="#7f91aa"/>
+<text x="800" y="628" text-anchor="middle" class="h">Target Group • HTTP :80</text><text x="800" y="654" text-anchor="middle" class="small muted">Health checks: GET / → 200</text>
+<path d="M800 520 V601" class="traffic"/>
+<rect x="350" y="717" width="329" height="103" rx="12" fill="#ff9900"/>
+<text x="514" y="750" text-anchor="middle" class="h">EC2 Web Server</text><text x="514" y="780" text-anchor="middle" class="body">Initial capacity: 1 VM</text><text x="514" y="807" text-anchor="middle" class="small">Private IP • no inbound SSH</text>
+<rect x="921" y="717" width="329" height="103" rx="12" fill="#fff3df" stroke="#e88716" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="1085" y="750" text-anchor="middle" class="h">Additional EC2 Capacity</text><text x="1085" y="780" text-anchor="middle" class="body">Launched when needed</text><text x="1085" y="807" text-anchor="middle" class="small">Illustrative placement, not guaranteed</text>
+<path d="M720 672 V692 H514 V717" class="traffic"/><path d="M880 672 V692 H1085 V717" class="traffic"/>
+<path d="M350 790 H270 V550" class="out"/>
+<path d="M1250 790 H1475 V884 H270 V550" class="out"/>
+<path d="M135 500 H96 V335 H355 V217" class="out"/>
+<path d="M1045 183 H1070 V320 H1530 V560 H1027" class="control"/><path d="M1322 226 V320 H1530" class="control"/>
+<text x="125" y="850" class="small muted">EC2 HTTP ingress accepts ONLY the ALB security group</text><text x="861" y="850" class="small muted">ASG automatically registers healthy targets</text>
+<rect x="105" y="923" width="890" height="62" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="125" y="949" class="body">Route tables: public → IGW • private → NAT • VPC CIDR → local</text><text x="125" y="973" class="small muted">S3 Gateway Endpoint: attached to private route tables for S3 access</text>
+<rect x="1020" y="923" width="475" height="62" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1040" y="949" class="body">Session Manager + EC2 IAM role</text><text x="1040" y="973" class="small muted">Outbound HTTPS via NAT • no public EC2 IP</text>
+<path d="M65 1052 H118" class="traffic"/><text x="132" y="1058" class="small">Web request / health checks</text>
+<path d="M450 1052 H503" class="out"/><text x="519" y="1058" class="small">Outbound path via NAT</text>
+<path d="M822 1052 H876" class="control"/><text x="892" y="1058" class="small">Configuration / scaling control</text>
+<text x="55" y="1100" class="small muted">Lab tradeoffs: one VM may have downtime during replacement; one zonal NAT creates an AZ dependency.</text>
+<text x="55" y="1128" class="small muted">For production: at least two running VMs, resilient NAT connectivity, HTTPS with ACM, and application-specific validation.</text>
+<text x="55" y="1168" class="body" style="font-weight:700">Built by Muhammad Luqman</text><text x="1545" y="1168" text-anchor="end" class="small muted">Reference design • not an AWS deployment screenshot</text>
+</svg>
