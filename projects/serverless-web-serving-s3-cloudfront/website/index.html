@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A secure static website delivered through Amazon CloudFront from a private S3 bucket.">
+  <title>Serverless Web Serving with S3 &amp; CloudFront</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Cloud project home">
+      <span class="brand-mark">AWS</span>
+      <span>Serverless Web Serving</span>
+    </a>
+    <nav class="nav-menu" aria-label="Main navigation">
+      <a class="nav-link" href="#architecture">Architecture</a>
+      <a class="nav-link" href="#features">Security</a>
+      <a class="nav-cta" href="#architecture">View project</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">SECURE • FAST • GLOBAL</div>
+          <h1>Static content.<br><span>Global delivery.</span></h1>
+          <p class="hero-copy">A production-style static website served through Amazon CloudFront while every object remains protected inside a private Amazon S3 bucket.</p>
+          <div class="actions">
+            <a class="button primary" href="#architecture">Explore architecture</a>
+            <a class="button secondary" href="#features">Security details</a>
+          </div>
+        </div>
+        <div class="cloud-visual" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="aws-core"><span>AWS</span><strong>SERVERLESS</strong></div>
+          <div class="floating-chip chip-cdn"><i></i>CloudFront CDN</div>
+          <div class="floating-chip chip-s3"><i></i>Private S3</div>
+          <div class="floating-chip chip-tls"><i></i>TLS 1.2+</div>
+        </div>
+      </div>
+      <div class="metrics" aria-label="Project highlights">
+        <div><strong>HTTPS</strong><span>enforced</span></div>
+        <div><strong>OAC</strong><span>private origin</span></div>
+        <div><strong>IaC</strong><span>CloudFormation</span></div>
+      </div>
+    </section>
+
+    <section class="architecture" id="architecture">
+      <div class="section-heading">
+        <span>HOW IT WORKS</span>
+        <h2>A simple, secure request path</h2>
+      </div>
+      <div class="flow" aria-label="User request flows to CloudFront, then to a private S3 bucket">
+        <article class="service-card">
+          <div class="icon globe">◎</div>
+          <small>STEP 01</small>
+          <h3>Internet User</h3>
+          <p>Requests the website over HTTPS.</p>
+        </article>
+        <div class="connector"><span>HTTPS</span><i></i></div>
+        <article class="service-card featured">
+          <div class="icon cloudfront">◌</div>
+          <small>STEP 02</small>
+          <h3>CloudFront</h3>
+          <p>Caches content close to visitors.</p>
+        </article>
+        <div class="connector"><span>OAC</span><i></i></div>
+        <article class="service-card">
+          <div class="icon bucket">▰</div>
+          <small>STEP 03</small>
+          <h3>Private S3</h3>
+          <p>Stores encrypted website assets.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="section-heading">
+        <span>ENGINEERING CHOICES</span>
+        <h2>Secure by default</h2>
+      </div>
+      <div class="feature-grid">
+        <article><b>01</b><h3>Private origin</h3><p>S3 Block Public Access stays fully enabled.</p></article>
+        <article><b>02</b><h3>Least privilege</h3><p>Only the exact CloudFront distribution can read objects.</p></article>
+        <article><b>03</b><h3>Modern delivery</h3><p>HTTP/2, HTTP/3, compression and TLS 1.2+ are configured.</p></article>
+        <article><b>04</b><h3>Repeatable setup</h3><p>CloudFormation creates the full architecture consistently.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Built by Muhammad Luqman</span>
+    <span id="status">Delivered securely through AWS</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
