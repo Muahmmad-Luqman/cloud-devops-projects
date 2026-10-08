@@ -8,6 +8,8 @@ This project retrieves current weather for Dera Ismail Khan, Pakistan, asks Nova
 
 ## Architecture
 
+![Daily weather email architecture](images/weather-architecture.jpg)
+
 ```mermaid
 flowchart TD
     Schedule["EventBridge Scheduler"] --> Lambda["Weather Lambda"]
